@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel="icon"  href="flogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Login #7</title>
+    
+    <style>
+        /* Loading Animation */
+        .loading {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1000;
+        }
+        
+        .loading .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        /* Added CSS for label animation */
+        .form-group label {
+            display: none; /* Initially hide labels */
+            margin-bottom: 0.5rem;
+            transition: opacity 0.3s ease-in-out;
+            opacity: 1;
+        }
+
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>  
+        <div class="logo">
+          <a href="http://127.0.0.1:5502/mainpure.html">
+            <img src="flogo.png" alt="CapitalCraft">
+            
+          </a>
+        </div>
+        <nav>
+
+            
+         <!-- <a href=" http://127.0.0.1:5500/detectlocation.html"><button class="detect-location-btn"><i class="fas fa-map-marker-alt"></i> Detect my location<img class="lr" src="https://icon-library.com/images/current-location-icon/current-location-icon-17.jpg"></button></a>  -->
+         <a href="http://127.0.0.1:5502/detectlocation.html" class="detect-location-link">
+         
+        </a>
+        
+        </ul>
+        </nav>
+        <!-- <div class="site-header"> -->
+      </div>
+            <a href ="http://127.0.0.1:5502/cart2.html"><img class="cart" src="https://www.burgerking.in/static/media/cart.3ff203fa.svg" alt="Cart"></a>
+          
+            <a href ="http://127.0.0.1:5502/login%20page%202.html"><img class="cart2" src="https://www.burgerking.in/static/media/login-inactive.de941b20.svg" alt="Cart"></a>
+            
+            <!-- <span>Find a Burger King near you</span> -->
+          </div>
+        </div>
+       
+      </header>
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://cdn.dribbble.com/users/4341736/screenshots/15515365/media/bd0c4049732081e05d1b0ad2a5be8bc2.gif" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-6 contents">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="mb-4">
+                            <h3>Sign Up</h3>
+                            <p class="mb-4">The market is a device for transferring money from the impatient to the patient.</p>
+                        </div>
+                        <form id="signupForm" action="#" method="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="username" required>
+                                <label for="username">Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="pan_number" required>
+                                <label for="pan_number">PAN Number</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="phone_number" required>
+                                <label for="phone_number">Phone Number</label>
+                            </div>
+                            <button type="button" id="sendOtpButton" class="btn btn-primary">Send Otp</button>
+                            <div id="otpSentMessage" style="display: none;">OTP sent to your number.</div>
+                            <div class="loading" id="otpSendingSpinner" style="display: none;">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="sr-only">Sending OTP...</span>
+                                </div>
+                            </div>
+                            <div id="otpInputBox" style="display: none;">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="otp" required>
+                                    <label for="otp">Enter OTP</label>
+                                </div>
+                            </div>
+                            <div id="passwordFields" style="display: none;">
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="password" required>
+                                    <label for="password">Password</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="confirmPassword" required>
+                                    <label for="confirmPassword">Confirm Password</label>
+                                </div>
+                                <button type="button" id="signupButton" class="btn btn-block btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Event listener for sending OTP
+        document.getElementById("sendOtpButton").addEventListener("click", function() {
+            // Simulate OTP sending
+            document.getElementById("sendOtpButton").disabled = true;
+            document.getElementById("otpSendingSpinner").style.display = "block";
+            setTimeout(function() {
+                document.getElementById("otpSentMessage").style.display = "block";
+                document.getElementById("otpSendingSpinner").style.display = "none";
+                document.getElementById("otpInputBox").style.display = "block";
+                document.getElementById("passwordFields").style.display = "block";
+                document.getElementById("sendOtpButton").disabled = false;
+            }, 2000); // Simulated OTP sending delay (2 seconds)
+        });
+
+        // Event listener for sign up button
+        document.getElementById("signupButton").addEventListener("click", function() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var enteredOTP = document.getElementById("otp").value;
+
+            // Validate OTP
+            if (enteredOTP !== "123455") { // Fixed OTP for demonstration
+                alert("Invalid OTP. Please try again.");
+                return;
+            }
+
+            // Validate passwords
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return;
+            }
+
+            // Proceed with sign up
+            alert("Sign up successful! Redirecting to main page...");
+            // Redirect to main page after successful sign up
+            window.location.href = "http://127.0.0.1:5500/index.html";
+        });
+
+        // Event listener for inputs to show/hide labels
+        var inputs = document.querySelectorAll('.form-group input');
+        inputs.forEach(function(input) {
+            input.addEventListener('input', function() {
+                var label = this.nextElementSibling;
+                if (this.value.trim() !== '') {
+                    label.style.opacity = 0;
+                } else {
+                    label.style.opacity = 1;
+                }
+            });
+        });
+
+        // Show labels for empty inputs
+        var labels = document.querySelectorAll('.form-group label');
+        labels.forEach(function(label) {
+            var input = label.previousElementSibling;
+            if (input.value.trim() === '') {
+                label.style.opacity = 1;
+            }
+        });
+    });
+</script>
+</body>
+</html>

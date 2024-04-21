@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="Login1.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login</h1>
+      <form action="login.php" method="post">
+        <label for="mobile">Enter mobile number:</label>
+        <input type="tel" id="mobile" name="mobile" inputmode="numeric" pattern="[0-9]{10}" required />
+      <a href="Login2.html"><button type="submit">Login with mobile number</button></a>
+      </form>
+      <div class="links">
+        <a href="forgot-password.php">Forgot Password?</a>
+        <a href="Login2.html">Sign Up</a>
+      </div>
+      <div class="qr-code">
+        <h2>Login with QR code</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSelZ4IZDbh8mvcv21lyz_0v2AB5XF92b2gVw&usqp=CAU" alt="QR Code" />
+        <p>
+          1. Go to Accounts > Select scan icon from top bar<br />
+          2. Point your phone at this screen to confirm login
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

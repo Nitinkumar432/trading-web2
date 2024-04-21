@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeHub/Discover</title>
+    <link rel="stylesheet" href="discover.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="icon"  href="flogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="left-elements">
+                <img src="flogo.png" alt="Company Logo">
+                <div class="separator"></div>
+                <div class="options">
+                 
+                    <a href="index.html" class="option">Charts</a>
+                    <a href="#" class="option">Discover</a>
+                    <a href="#" class="option">Orders</a>
+                    <a href="#" class="option">Positions</a>
+                    <a href="invest.html" class="option">Holding</a>
+                </div>
+            </div>
+            <div class="box" id="nifty-box">
+                <span>Nifty:</span>
+                <span id="nifty-value" class="value">----</span>
+                <span id="nifty-percentage" class="percentage">----</span>
+           
+            </div>
+            <div class="box" id="sensex-box">
+                <span>Sensex:</span>
+                <span id="sensex-value" class="value">----</span>
+                <span id="sensex-percentage" class="percentage">----</span>
+            </div>
+            
+            
+            <div class="right-elements">
+                <nav>
+                    <ul>
+                        <li><a href="#"><img src="https://www.freeiconspng.com/thumbs/help-icon/help-icon-12.png" alt="Help"> Help</a></li>
+                        <li><a href="#"><img src="https://icons.veryicon.com/png/o/miscellaneous/common-icons-6/more-106.png" alt="More"> More</a>
+                            <div class="dropdown-content">
+                                <a href="#">Investments</a>
+                                <a href="#"> Portfolio</a>
+                                <a href="#"> Transactions</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="Account.html"><img src="https://cdn-icons-png.freepik.com/512/10513/10513303.png" alt="Funds"> Funds</a>
+                            <div class="dropdown-content">
+                                <a href="#"> Investments</a>
+                                <a href="#">Portfolio</a>
+                                <a href="#"> Transactions</a>
+                            </div>
+                        </li>
+                        <li>
+                         
+                            <a href="#"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFi5uKNGelVmHsccHVPJEd3G81rUnBYtQRiQ&usqp=CAU" alt="Profile Image">Nitin</a>
+                           
+                        </li>
+                        
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="containertt">
+        <!-- <h1>Company Search</h1> -->
+        <div class="search-containertt">
+            <input type="text" id="searchInput" placeholder="Search for a company...">
+            <button id="searchButton">Search</button>
+        </div>
+        <div id="searchResult"></div>
+        <div id="suggestions"></div>
+        <div id="buyOption"></div>
+    </div>
+    <script src="search.js"></script>
+    <div class="container">
+        <h1>Top 20 Companies by 2024</h1>
+        <button id="toggleViewButton" class="toggle-view-button ">Toggle View</button>
+        <div id="companiesContainer" class=""></div>
+    </div>
+     
+  <footer>
+    <div class="footer">
+    <div class="row">
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-youtube"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    </div>
+    
+    <div class="row">
+    <ul>
+    <li><a href="#">Contact us</a></li>
+    <li><a href="#">Our Services</a></li>
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Terms & Conditions</a></li>
+    <li><a href="#">Career</a></li>
+    </ul>
+    </div>
+    
+    <div class="row">
+    TradeHub Copyright © 2021 Inferno - All rights reserved || Designed By: Nitin 
+    </div>
+    </div>
+    </footer>
+    
+
+</body>
+</html>
+
+    <script src="discover.js"></script>
+    
+</body>
+</html>

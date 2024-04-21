@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel="icon"  href="flogo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <!-- <link rel="stylesheet" href="css/owl.carousel.min.css"> -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>TradeHub-Login</title>
+    
+    <style>
+        /* Loading Animation */
+        .loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1000;
+        }
+        
+        .loading .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+        
+        /* Redirecting Message */
+        .redirecting {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Sign Up Link */
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .form-group label {
+            display: none; /* Initially hide labels */
+            margin-bottom: 0.5rem;
+            transition: opacity 0.3s ease-in-out;
+            opacity: 1;
+        }
+
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>  
+        <div class="logo">
+          <a href="http://127.0.0.1:5502/mainpure.html">
+            <img src="flogo.png" alt="TradeHub logo">
+            
+          </a>
+        </div>
+        <nav>
+
+            
+         <!-- <a href=" http://127.0.0.1:5500/detectlocation.html"><button class="detect-location-btn"><i class="fas fa-map-marker-alt"></i> Detect my location<img class="lr" src="https://icon-library.com/images/current-location-icon/current-location-icon-17.jpg"></button></a>  -->
+         <a href="http://127.0.0.1:5502/detectlocation.html" class="detect-location-link">
+         
+        </a>
+        
+        </ul>
+        </nav>
+        <!-- <div class="site-header"> -->
+      </div>
+            <a href ="http://127.0.0.1:5502/cart2.html"><img class="cart" src="https://www.burgerking.in/static/media/cart.3ff203fa.svg" alt="Cart"></a>
+          
+            <a href ="http://127.0.0.1:5502/login%20page%202.html"><img class="cart2" src="https://www.burgerking.in/static/media/login-inactive.de941b20.svg" alt="Cart"></a>
+            
+            <!-- <span>Find a Burger King near you</span> -->
+          </div>
+        </div>
+       
+      </header>
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://cdn.dribbble.com/users/4341736/screenshots/15515365/media/bd0c4049732081e05d1b0ad2a5be8bc2.gif" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-6 contents">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">.
+                      
+                        <div class="mb-4">
+                            <h3>Sign In</h3>
+                            <p class="mb-4">The market is a device for transferring money from the impatient to the patient.</p>
+                        </div>
+                        <form id="loginForm" action="#" method="post">
+                            <div class="form-group first">
+                                <!-- <label for="username">Username</label> -->
+                                <input type="text" class="form-control" id="username" placeholder="username">
+                            </div>
+                            <div class="form-group last mb-4">
+                                <!-- <label for="password">Password</label> -->
+                                <input type="password" class="form-control" id="password" placeholder="password">
+                            </div>
+                            <div class="d-flex mb-5 align-items-center">
+                                <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                                    <input type="checkbox" checked="checked"/>
+                                    <div class="control__indicator"></div>
+                                </label>
+                                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
+                            </div>
+                            <button type="button" id="loginButton" class="btn btn-block btn-primary">Log In</button>
+                            <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>
+                            <div class="social-login">
+                                <a href="#" class="facebook">
+                                    <span class="icon-facebook mr-3"></span>
+                                </a>
+                                <a href="#" class="twitter">
+                                    <span class="icon-twitter mr-3"></span>
+                                </a>
+                                <a href="#" class="google">
+                                    <span class="icon-google mr-3"></span>
+                                </a>
+                            </div>
+                        </form>
+                        <!-- Loading Animation -->
+                        <div id="loading" class="loading">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                        <!-- Redirecting Message -->
+                        <div id="redirecting" class="redirecting">
+                            Redirecting to main page...
+                        </div>
+                        <!-- Sign Up Link -->
+                        <!-- Sign Up Link -->
+<div class="signup-link">
+  Don't have an account? <a href="signup.html" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /*pop up */ -->
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+    // Add JavaScript for login functionality
+    document.getElementById("loginButton").addEventListener("click", function() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Validate username and password
+        var validUsernames = ["nitin", "omil", "nitin2"];
+        var validPassword = "admin"; // Fixed valid password
+
+        // Check if username and password are valid
+        if (validUsernames.includes(username) && password === validPassword) {
+            // Show loading animation
+            document.getElementById("loading").style.display = "block";
+            
+            // Simulate delay for demonstration purposes
+            setTimeout(function() {
+                // Hide loading animation
+                document.getElementById("loading").style.display = "none";
+                
+                // Show redirecting message
+                document.getElementById("redirecting").style.display = "block";
+                
+                // Redirect to main page after successful login
+                setTimeout(function() {
+                    window.location.href = "http://127.0.0.1:5500/index.html";
+                }, 2000); // 2 seconds delay for redirecting
+            }, 2000); // 2 seconds delay for loading animation
+        } else {
+            alert("Invalid username or password");
+        }
+    });
+</script>
+</body>
+</html>

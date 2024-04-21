@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sidebar.css">
+    <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.stock.min.js"></script>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="SBheader">
+                <select>
+                    <option value="option1">Motor</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+                <img src="List_Icon.png">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWcksmWMtBw3xyhoUMZmPJL_wVBK0CRHx3Gw&usqp=CAU">
+            </div>
+            <div class="SBcontent">
+                <div class="table-container">
+                    <table>
+                        <table>
+                            <tr>
+                              <td>POLICYBZR<br>NSE EQ</td>
+                              <td>941.25 <br>+13.30</td>
+                            </tr>
+                            <tr>
+                              <td>ZOMATO <br>NSE EQ</td>
+                              <td>152.25 <br>-2.50</td>
+                            </tr>
+                            <tr>
+                              <td>ASIANTILES <br>NSE EQ</td>
+                              <td>64.45<br>+0.70 </td>
+                            </tr>
+                            <tr>
+                              <td>CGPOWER <br>NSE EQ</td>
+                              <td>437.35 <br>+9.35</td>
+                            </tr>
+                            <tr>
+                              <td>ASHOKLEY <br>NSE EQ</td>
+                              <td>173.65 <br>+13.95</td>
+                            </tr>
+                            <tr>
+                              <td>ONGC <br>NSE EQ</td>
+                              <td>268.85 <br>+2.90</td>
+                            </tr>
+                            <tr>
+                              <td>NATIONALUM</td>
+                              <td>155.50 <br>+1.10</td>
+                            </tr>
+                            <tr>
+                              <td>WIPRO <br>NSE EQ</td>
+                              <td>514.50 <br>+5.60</td>
+                            </tr>
+                            <tr>
+                              <td>ICDSLTD <br>NSE EQ</td>
+                              <td>57.00 <br>+0.40</td>
+                            </tr>
+                            <tr>
+                              <td>LICHSGFIN <br>NSE EQ</td>
+                              <td>636.60 <br>+1.30</td>
+                            </tr>
+                            <tr>
+                              <td>POLICYBZR<br>NSE EQ</td>
+                              <td>941.25 <br>+13.30</td>
+                            </tr>
+                            <tr>
+                              <td>ZOMATO <br>NSE EQ</td>
+                              <td>152.25 <br>-2.50</td>
+                            </tr>
+                            <tr>
+                              <td>ASIANTILES <br>NSE EQ</td>
+                              <td>64.45<br>+0.70 </td>
+                            </tr>
+                            <tr>
+                              <td>CGPOWER <br>NSE EQ</td>
+                              <td>437.35 <br>+9.35</td>
+                            </tr>
+                            <tr>
+                              <td>ASHOKLEY <br>NSE EQ</td>
+                              <td>173.65 <br>+13.95</td>
+                            </tr>
+                            <tr>
+                              <td>ONGC <br>NSE EQ</td>
+                              <td>268.85 <br>+2.90</td>
+                            </tr>
+                            <tr>
+                              <td>NATIONALUM</td>
+                              <td>155.50 <br>+1.10</td>
+                            </tr>
+                            <tr>
+                              <td>WIPRO <br>NSE EQ</td>
+                              <td>514.50 <br>+5.60</td>
+                            </tr>
+                            <tr>
+                              <td>ICDSLTD <br>NSE EQ</td>
+                              <td>57.00 <br>+0.40</td>
+                            </tr>
+                            <tr>
+                              <td>LICHSGFIN <br>NSE EQ</td>
+                              <td>636.60 <br>+1.30</td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="SBfooter">
+                <span>Related news</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ68rdOGZU74wVMIqN_MmYFO2ucY3P-QtNuGw&usqp=CAU">
+            </div>
+        </div>
+
+        <div id="chartContainer"></div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var dataPoints = [], currentDate = new Date(), rangeChangedTriggered = false;
+            var stockChart = new CanvasJS.StockChart("chartContainer",{
+                theme: "light2",
+                title:{
+                    text:"Samsung"
+                },
+                backgroundColor: "black", // Set chart background color
+                rangeChanged: function(e) {
+                    rangeChangedTriggered = true;
+                },
+                charts: [{
+                    axisX: {
+                        crosshair: {
+                            enabled: true,
+                            valueFormatString: "MMM DD, YYYY HH:mm:ss"
+                        }
+                    },
+                    axisY: {
+                        title: "Pageviews Per Second",
+                        stripLines: [{
+                            showOnTop: true,
+                            lineDashType: "dash",
+                            color: "#ff4949",
+                            labelFontColor: "#ff4949",
+                            labelFontSize: 14
+                        }]
+                    },
+                    toolTip: {
+                        shared: true
+                    },
+                    data: [{
+                        type: "line",
+                        name: "Pageviews",
+                        xValueFormatString: "MMM DD, YYYY HH:mm:ss",
+                        xValueType: "dateTime",
+                        dataPoints : dataPoints
+                    }]
+                }],
+                navigator: {
+                    slider: {
+                        minimum: new Date(currentDate.getTime() - (90 * 1000))
+                    }
+                },
+                rangeSelector: {
+                    enabled: false
+                }
+            });
+
+            var dataCount = 700, ystart = 50, interval = 1000, xstart = (currentDate.getTime() - (700 * 1000));
+            updateChart(xstart, ystart, dataCount, interval);
+
+            function updateChart(xstart, ystart, length, interval) {
+                var xVal = xstart, yVal = ystart;
+                for(var i = 0; i < length; i++) {
+                    yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
+                    yVal = Math.min(Math.max(yVal, 5), 90);
+                    dataPoints.push({x: xVal,y: yVal});
+                    xVal += interval;
+                }
+                if(!rangeChangedTriggered) {
+                    stockChart.options.navigator.slider.minimum = new Date(xVal - (90 * 1000));
+                }
+                stockChart.options.charts[0].axisY.stripLines[0].value =  dataPoints[dataPoints.length - 1].y;
+                stockChart.options.charts[0].axisY.stripLines[0].label = stockChart.options.charts[0].axisY.stripLines[0]["value"];
+                xstart = xVal;
+                dataCount = 1;
+                ystart = yVal;
+                stockChart.render();
+                setTimeout(function() { updateChart(xstart, ystart, dataCount, interval); }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>

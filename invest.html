@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Page</title>
+<link rel="stylesheet" href="invest.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+        <div class="left-elements">
+            <img src="flogo.png" alt="Company Logo">
+            <div class="separator"></div>
+            <div class="options">
+             
+                <a href="index.html" class="option">Charts</a>
+                <a href="Discover.html" class="option">Discover</a>
+                <a href="#" class="option">Orders</a>
+                <a href="#" class="option">Positions</a>
+                <a href="#" class="option">Holding</a>
+            </div>
+        </div>
+        <div class="box" id="nifty-box">
+            <span>Nifty:</span>
+            <span id="nifty-value" class="value">----</span>
+            <span id="nifty-percentage" class="percentage">----</span>
+       
+        </div>
+        <div class="box" id="sensex-box">
+            <span>Sensex:</span>
+            <span id="sensex-value" class="value">----</span>
+            <span id="sensex-percentage" class="percentage">----</span>
+        </div>
+        
+        
+        <div class="right-elements">
+            <nav>
+                <ul>
+                    <li><a href="help.html"><img src="https://www.freeiconspng.com/thumbs/help-icon/help-icon-12.png" alt="Help"> Help</a></li>
+                    <li><a href="#"><img src="https://icons.veryicon.com/png/o/miscellaneous/common-icons-6/more-106.png" alt="More"> More</a>
+                        <div class="dropdown-content">
+                            <a href="#">Investments</a>
+                            <a href="#"> Portfolio</a>
+                            <a href="#"> Transactions</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="Account.html"><img src="https://cdn-icons-png.freepik.com/512/10513/10513303.png" alt="Funds"> Funds</a>
+                        <div class="dropdown-content">
+                            <a href="#"> Investments</a>
+                            <a href="#">Portfolio</a>
+                            <a href="#"> Transactions</a>
+                        </div>
+                    </li>
+                    <li>
+                     
+                        <a href="profile.html"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFi5uKNGelVmHsccHVPJEd3G81rUnBYtQRiQ&usqp=CAU" alt="Profile Image">Omil</a>
+                       
+                    </li>
+                    
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+    <div class="containertt">
+        <div class="info">
+          <img src="https://static.vecteezy.com/system/resources/previews/010/224/060/original/financial-management-concept-and-investment-banner-template-of-payment-with-money-free-png.png" alt="Investment Image">
+          <p>Investment Amount : $112000</p>
+          <!-- <p>$174.00</p> -->
+        </div>
+        <div class="info">
+          <img src="https://cdn-icons-png.flaticon.com/512/2910/2910311.png" alt="Market Value Image">
+          <p>Market Value : $105.00</p>
+          
+        </div>
+        <div class="info">
+          <img src="https://w7.pngwing.com/pngs/262/309/png-transparent-computer-icons-losses-miscellaneous-angle-text-thumbnail.png" alt="Overall Loss Image">
+          <p>Overall Profit: <spaN style="color:green">$147.19 (+39.76%) </spaN></p>
+        
+        
+        </div>
+        <div class="info">
+          <img src="https://cdn-icons-png.flaticon.com/512/630/630734.png" alt="Today's Loss Image">
+          <p>Today's Profit : <span style="color:green">$5.54 (+3.17%)</span></p>
+         
+        </div>
+<div class="containerssm">
+    
+  <!-- Tabs for selecting investment types -->
+  <div class="tabs">
+      <button class="tablink" onclick="openTab('equity')">Equity</button>
+      <button class="tablink" onclick="openTab('mutual_funds')">Mutual Funds</button>
+      <button class="tablink" onclick="openTab('stocks')">Stocks</button>
+  </div>
+  
+
+  <!-- Container for displaying investment details -->
+  <div id="equity" class="tabcontent">
+    <h2>Equity Investments</h2>
+    <img  src="https://cdn.angelone.in/sparkweb/images/no-history.svg">
+    <span style="margin-left: 420px;color: brown;">You Don't have purchased any Equity Yet</span>
+    <!-- HTML content for Equity investments -->
+    <!-- Include the HTML content specific to Equity investments here -->
+  </div>
+
+  <div id="mutual_funds" class="tabcontent">
+    <h2>Mutual Funds</h2>
+    <div class="row">
+        <div>
+          <img  src="https://us.123rf.com/450wm/vectorstockcompany/vectorstockcompany1809/vectorstockcompany180900857/109719509-mutual-fund-management-icon-long-term-investment-loan-approval-accountancy-service-pension-savings.jpg?ver=6" alt="Mutual Funds Logo">
+          
+        </div>
+        <div>
+          <p>Investment Amount</p>
+          <p>$0.00</p>
+        </div>
+        <div>
+          <p>Market Value</p>
+          <p>$0.00</p>
+        </div>
+        <div>
+          <p>Overall G/L</p>
+          <p>---</p>
+        </div>
+        <div>
+          <p>Today’s G/L</p>
+          <p>---</p>
+        </div>
+      </div>
+    <!-- HTML content for Mutual Funds investments -->
+    <!-- Include the HTML content specific to Mutual Funds investments here -->
+  </div>
+
+  <div id="stocks" class="tabcontent">
+    <h2>Stocks</h2>
+    <img  src="https://cdn.angelone.in/sparkweb/images/no-history.svg">
+    <span style="margin-left: 420px;color: brown;">You Don't have purchased any Equity Yet</span>
+
+    <!-- HTML content for Stocks investments -->
+    <!-- Include the HTML content specific to Stocks investments here -->
+    
+  </div>
+
+  <!-- Existing portfolio content goes here -->
+
+  <h2 style="margin-top:10px;color: white;">Portfolio</h2>
+  
+  <div class="row">
+    
+    <div>
+      <img src="https://e7.pngegg.com/pngimages/885/320/png-clipart-house-computer-icons-home-equity-loan-real-estate-house-building-text-thumbnail.png" alt="Equity Logo">
+      <p>Equity (100%)</p>
+    </div>
+    <div>
+      <p>Investment Amount</p>
+      <p>$174.00</p>
+    </div>
+    <div>
+      <p>Market Value</p>
+      <p>$105.56</p>
+    </div>
+    <div>
+      <p>Overall G/L</p>
+      <p>$69.19 -39.76%</p>
+    </div>
+    <div>
+      <p>Today’s G/L</p>
+      <p>$5.54 -3.17%</p>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div>
+      <img src="https://us.123rf.com/450wm/vectorstockcompany/vectorstockcompany1809/vectorstockcompany180900857/109719509-mutual-fund-management-icon-long-term-investment-loan-approval-accountancy-service-pension-savings.jpg?ver=6" alt="Mutual Funds Logo">
+      <p>Mutual Funds</p>
+    </div>
+    <div>
+      <p>Investment Amount</p>
+      <p>$0.00</p>
+    </div>
+    <div>
+      <p>Market Value</p>
+      <p>$0.00</p>
+    </div>
+    <div>
+      <p>Overall G/L</p>
+      <p>---</p>
+    </div>
+    <div>
+      <p>Today’s G/L</p>
+      <p>---</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div>
+      <img src="https://t4.ftcdn.net/jpg/04/45/69/11/360_F_445691131_2CwWW2re1uapnLAZ46ayVVcDjWSU6QqP.jpg" alt="SGB Logo">
+      <p>SGB</p>
+    </div>
+    <div>
+      <p>Investment Amount</p>
+      <p>$0.00</p>
+    </div>
+    <div>
+      <p>Market Value</p>
+      <p>$0.00</p>
+    </div>
+    <div>
+      <p>Overall G/L</p>
+      <p>---</p>
+    </div>
+    <div>
+      <p>Today’s G/L</p>
+      <p>---</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsm9XUYe4oziyRBCEP0b2TclTSqe4tY3wIIh6GCqKQY_A4Hs7F7DMoxkRHZdpL5_QhTZQ&usqp=CAU" alt="Bonds Logo">
+      <p>Bonds</p>
+    </div>
+    <div>
+      <p>Investment Amount</p>
+      <p>$0.00</p>
+    </div>
+    <div>
+      <p>Market Value</p>
+      <p>$0.00</p>
+    </div>
+    <div>
+      <p>Overall G/L</p>
+      <p>$0.00 0.00%</p>
+    </div>
+    <div>
+      <p>Today’s G/L</p>
+      <p>$0.00 0.00%</p>
+    </div>
+  </div>
+</div>
+
+  <!-- Other rows -->
+
+</div>
+
+<script>
+function openTab(tabName) {
+    var i;
+    var x = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+    }
+    document.getElementById(tabName).style.display = "block";  
+}
+</script>
+<script src="script.js"> </script>
+<footer>
+    <div class="footer">
+    <div class="rows">
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-youtube"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    </div>
+    
+    <div class="rows">
+    <ul>
+    <li><a href="#">Contact us</a></li>
+    <li><a href="#">Our Services</a></li>
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Terms & Conditions</a></li>
+    <li><a href="#">Career</a></li>
+    </ul>
+    </div>
+    
+    <div class="rows">
+    TradeHub Copyright © 2021 Inferno - All rights reserved || Designed By: Nitin 
+    </div>
+    </div>
+    </footer>
+
+</body>
+</html>

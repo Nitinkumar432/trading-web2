@@ -1,0 +1,341 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #181717;
+    color:white;
+}
+
+header {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px;
+    border-bottom:  1px solid rgb(62, 61, 61);
+
+    
+  
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+   
+}
+
+.left-elements {
+    display: flex;
+    align-items: center;
+}
+
+.left-elements img {
+    height: 60px; /* Adjust the height of the image icon */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust margin as needed */
+}
+.separator {
+    height: 15px; /* Adjust height as needed */
+    width: 2px; /* Adjust width as needed */
+    background-color: #3a3636; /* Adjust color as needed */
+    margin: 0 10px; /* Adjust margin as needed */
+}
+
+
+
+
+.options {
+    display: flex;
+}
+
+.options .option {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.options .option:hover {
+    color: #ffd700; /* Change color on hover */
+}
+
+.nifty-sensex {
+    display: flex;
+    align-items: center;
+    
+}
+
+.box {
+    background-color: #1d1717;
+    border:1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.box span {
+    color: #fbf7f7;
+}
+
+.box .value {
+    font-weight: bold;
+}
+
+.percentage {
+    margin-left: 5px; /* Adjust spacing between value and percentage */
+    font-size: 14px; /* Adjust font size as needed */
+}
+
+.green {
+    color: green !important; /* Ensure that green overrides any other styles */
+}
+
+.red {
+    color: red !important; /* Ensure that red overrides any other styles */
+}
+
+.right-elements {
+    display: flex;
+    align-items: center;
+}
+.right-elements img {
+    max-height: 20px; /* Set the maximum height of the image */
+    width: auto; /* Allow the width to adjust proportionally */
+    margin-left: 7px; /* Adjust margin as needed */
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+nav ul li a img {
+    margin-right: 5px; /* Adjust spacing between icon and text */
+    vertical-align: middle;
+}
+
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0f0f0f;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    
+    z-index: 1;
+    border-radius: 5px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+nav ul li .dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li .dropdown-content a:hover {
+    background-color: #f4eeee;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .left-elements {
+        margin-bottom: 10px;
+    }
+
+    .right-elements {
+        margin-top: 10px;
+    }
+
+    .options .option {
+        margin-right: 10px;
+    }
+
+    .box {
+        margin-right: 10px;
+    }
+
+    .details {
+        display: none; /* Hide details section on smaller screens */
+    }
+}
+
+
+ footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+section {
+    padding: 20px;
+}
+
+.issue-container {
+    margin-bottom: 40px;
+}
+
+.issue {
+    background-color: #171616;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.issue h3 {
+    margin-top: 0;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    background-color: #181818;
+    color:white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #302f2f;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+.status {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#starting-page-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.starting-box {
+    flex: 1;
+    background-color: #181818;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+.starting-box:last-child {
+    margin-right: 0;
+}
+/* Existing styles */
+/* Add animation for logo */
+@keyframes logoAnimation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.logo {
+    animation: logoAnimation 4s infinite linear;
+}
+
+/* Add hover animation for boxes */
+.starting-box {
+    transition: transform 0.3s ease-in-out;
+}
+
+.starting-box:hover {
+    transform: scale(1.05);
+}
+
+/* Add media queries for responsive design */
+@media only screen and (max-width: 768px) {
+    #starting-page-boxes {
+        flex-direction: column;
+    }
+
+    .starting-box {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+#faq {
+    margin-top: 40px;
+}
+
+.faq-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.faq-item {
+    flex: 1;
+    background-color: #181818;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    position: relative;
+}
+
+.faq-item .view-more {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #007bff;
+}
+
+.faq-item .view-more span {
+    margin-left: 5px;
+}

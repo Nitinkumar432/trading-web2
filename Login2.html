@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Investment Eligibility</title>
+    <link rel="stylesheet" type="text/css" href="Login2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Investment Eligibility</h1>
+      <div class="form">
+        <form action="eligibility.php" method="post">
+            <label for="experience">Experience:</label>
+            <select id="experience" name="experience" required>
+              <option value="">Select your experience</option>
+              <option value="less_than_1_year">Less than 1 year</option>
+              <option value="more_than_25">More than 25 years</option>
+              <option value="1_to_2_years">1-2 years</option>
+              <option value="2_to_5_years">2-5 years</option>
+              <option value="5_to_10_years">5-10 years</option>
+              <option value="10_to_20_years">10-20 years</option>
+              <option value="20_to_25_years">20-25 years</option>
+            </select><br><br>
+            <label for="annual_income">Your annual income:</label>
+            <select id="annual_income" name="annual_income" required>
+              <option value="">Select your annual income</option>
+              <option value="below_1_lakh">Below 1 Lakh</option>
+              <option value="1_to_5_lakh">1L - 5L</option>
+              <option value="5_to_10_lakh">5L - 10L</option>
+              <option value="10_to_25_lakh">10L - 25L</option>
+              <option value="above_25_lakh">Above 25L</option>
+            </select>
+            <br><br>
+            <label for="occupation">Your occupation:</label>
+            <select id="occupation" name="occupation" required>
+              <option value="">Select your occupation</option>
+              <option value="private_sector">Private sector</option>
+              <option value="business">Business</option>
+              <option value="housewife">Housewife</option>
+              <option value="government_service">Government service</option>
+              <option value="retired">Retired</option>
+              <option value="student">Student</option>
+              <option value="agriculturist">Agriculturist</option>
+              <option value="other">Other</option>
+              <option value="professional">Professional</option>
+            </select><br><br>
+          </form>
+          <button id="button" type="submit">Check Eligibility</button>
+      </div>
+    </div>
+  </body>
+</html>

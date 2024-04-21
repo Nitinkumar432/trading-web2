@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Website</title>
+    <link rel="stylesheet" href="help.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="left-elements">
+                <img src="flogo.png" alt="Company Logo">
+                <div class="separator"></div>
+                <div class="options">
+                 
+                    <a href="index.html" class="option">Charts</a>
+                    <a href="Discover.html" class="option">Discover</a>
+                    <a href="#" class="option">Orders</a>
+                    <a href="#" class="option">Positions</a>
+                    <a href="invest.html" class="option">Holding</a>
+                </div>
+            </div>
+            <div class="box" id="nifty-box">
+                <span>Nifty:</span>
+                <span id="nifty-value" class="value">----</span>
+                <span id="nifty-percentage" class="percentage">----</span>
+           
+            </div>
+            <div class="box" id="sensex-box">
+                <span>Sensex:</span>
+                <span id="sensex-value" class="value">----</span>
+                <span id="sensex-percentage" class="percentage">----</span>
+            </div>
+            
+            
+            <div class="right-elements">
+                <nav>
+                    <ul>
+                        <li><a href="#"><img src="https://www.freeiconspng.com/thumbs/help-icon/help-icon-12.png" alt="Help"> Help</a></li>
+                        <li><a href="#"><img src="https://icons.veryicon.com/png/o/miscellaneous/common-icons-6/more-106.png" alt="More"> More</a>
+                            <div class="dropdown-content">
+                                <a href="#">Investments</a>
+                                <a href="#"> Portfolio</a>
+                                <a href="#"> Transactions</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="Account.html"><img src="https://cdn-icons-png.freepik.com/512/10513/10513303.png" alt="Funds"> Funds</a>
+                            <div class="dropdown-content">
+                                <a href="#"> Investments</a>
+                                <a href="#">Portfolio</a>
+                                <a href="#"> Transactions</a>
+                            </div>
+                        </li>
+                        <li>
+                         
+                            <a href="#"> <img src="https://png.pngtree.com/png-vector/20190307/ourmid/pngtree-vector-edit-profile-icon-png-image_758006.jpg" alt="Profile Image">Nitin.ku</a>
+                           
+                        </li>
+                        
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="starting-page-boxes">
+        <div class="starting-box">
+            <!-- Content for starting box 1 -->
+            <h2>Login/Signup Problem</h2>
+            <p>Login/Signup problem. However, I can guide you through some general troubleshooting steps that might help you identify the issue:
+
+            </p>
+        </div>
+        <div class="starting-box">
+            <!-- Content for starting box 2 -->
+            <h2>Stock Buy Sell problem</h2>
+            <p>Login/Signup problem. However, I can guide you through some general troubleshooting steps that might help you identify the issue:</p>
+        </div>
+        <div class="starting-box">
+            <!-- Content for starting box 3 -->
+            <h2>Withdraw Money problem</h2>
+            <p>Login/Signup problem. However, I can guide you through some general troubleshooting steps that might help you identify the issue:
+
+            </p>
+        </div>
+    </section>
+
+    <section id="related-issues">
+        <h2>Related Issues</h2>
+        <!-- Existing related issues section -->
+        <div id="issue-containers">
+            <div class="issue-container">
+                <div class="issue">
+                    <h3>Issue 1</h3>
+                    <form id="form1">
+                        <!-- Form fields for issue 1 -->
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <textarea name="description" placeholder="Description" required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                    <div class="status"></div>
+                </div>
+            </div>
+            <!-- More issue containers can be added dynamically -->
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2>FAQs</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <!-- FAQ item 1 -->
+                <p>Money Withdrwal problem.</p>
+                <button class="view-more">View More <span>&rarr;</span></button>
+            </div>
+            <div class="faq-item">
+                <!-- FAQ item 2 -->
+                <p>BUY and SELL problem.</p>
+                <button class="view-more">View More <span>&rarr;</span></button>
+            </div>
+            <!-- More FAQ items can be added -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Trading Website</p>
+    </footer>
+    <script src="script.js"></script>
+
+    <!-- <script src="">
+        document.addEventListener('DOMContentLoaded', function () {
+    const addIssueBtn = document.getElementById('add-issue-btn');
+    const issueContainers = document.getElementById('issue-containers');
+
+    addIssueBtn.addEventListener('click', function () {
+        const newIssueContainer = document.createElement('div');
+        newIssueContainer.classList.add('issue-container');
+
+        const newIssue = document.createElement('div');
+        newIssue.classList.add('issue');
+        const issueNumber = document.querySelectorAll('.issue-container').length + 1;
+        newIssue.innerHTML = `
+            <h3>Issue ${issueNumber}</h3>
+            <form id="form${issueNumber}">
+                 Form fields for issue ${issueNumber} -
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="description" placeholder="Description" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="status"></div>
+        `;
+
+        newIssueContainer.appendChild(newIssue);
+        issueContainers.appendChild(newIssueContainer);
+    });
+
+    document.querySelectorAll('form').forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // Simulate submission status (here, just toggling between resolved and unresolved)
+            const status = this.parentElement.querySelector('.status');
+            
+            // Check if the form is already resolved
+            if (status.innerText === 'Resolved') {
+                status.innerText = 'Unresolved';
+            } else {
+                status.innerText = 'Resolved';
+            }
+        });
+    });
+
+    // Toggle view more/less for FAQs
+    document.querySelectorAll('.view-more').forEach(function (button) {
+        button.addEventListener('click', function () {
+            const faqContent = this.parentElement.querySelector('p');
+            if (faqContent.style.display === 'none' || !faqContent.style.display) {
+                faqContent.style.display = 'block';
+                this.innerText = 'View Less';
+            } else {
+                faqContent.style.display = 'none';
+                this.innerText = 'View More';
+            }
+        });
+    });
+}); -->
+
+    </script>
+</body>
+</html>

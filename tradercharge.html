@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trades and Charges</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.date-range button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.date-range button:hover {
+    background-color: #555;
+}
+
+.charges-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.charges-summary > div {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.charges-summary > div:last-child {
+    margin-right: 0;
+}
+
+.label {
+    font-size: 14px;
+}
+
+.value {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.trades-count {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.date-summary {
+    margin-top: 20px;
+}
+
+.trades {
+    margin-top: 20px;
+}
+
+.trade-date {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.download-button {
+    display: block;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.download-button:hover {
+    background-color: #45a049;
+}
+
+</style>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Trades and Charges</h1>
+            <div class="date-range">
+                <button>Last 7 Days</button>
+                <button>Last 15 Days</button>
+                <button>Last 30 Days</button>
+                <button>Custom</button>
+            </div>
+        </div>
+        <div class="charges-summary">
+            <div class="total-charges">
+                <div class="label">Total Charges</div>
+                <div class="value">₹24.80</div>
+                <div class="trades-count">5 TRADES</div>
+            </div>
+            <div class="trade-charges">
+                <div class="label">Trade Charges</div>
+                <div class="value">₹1.20</div>
+            </div>
+            <div class="non-trade-charges">
+                <div class="label">Non-Trade Charges</div>
+                <div class="value">₹23.60</div>
+            </div>
+        </div>
+        <div class="date-summary">
+            Showing charges summary for 08 May 2024 - 14 May 2024
+        </div>
+        <div class="trades">
+            <div class="trade-date">
+                <div class="date">14 May 2024</div>
+                <div class="total-charges">Total Charges: ₹1.10</div>
+            </div>
+            <div class="trade-date">
+                <div class="date">10 May 2024</div>
+                <div class="total-charges">Total Charges: ₹0.08</div>
+            </div>
+        </div>
+        <button class="download-button">DOWNLOAD TRADE HISTORY</button>
+    </div>
+    <script src="scripts.js">
+        // Example: handling date range button clicks
+document.querySelectorAll('.date-range button').forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelectorAll('.date-range button').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        // Add functionality to filter trades based on date range here
+    });
+});
+
+    </script>
+</body>
+</html>

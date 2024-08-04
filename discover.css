@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #2a2929;
+    background-color: #000000;
 
 }
 
@@ -228,7 +228,7 @@ h1 {
 }
 
 .company:hover {
-    background-color: #1f1d1d;
+    background-color: #112235;
     transform: translateY(-2px);
 }
 

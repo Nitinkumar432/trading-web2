@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers & Rewards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    overflow: hidden;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-button.active {
+    border-bottom: 2px solid #007bff;
+    font-weight: bold;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.empty-state img {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.empty-state p {
+    font-size: 14px;
+    color: #777;
+}
+
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Offers & Rewards</h1>
+        </header>
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('offers')">Offers</button>
+            <button class="tab-button" onclick="showTab('rewards')">Rewards</button>
+        </div>
+        <div class="content">
+            <div id="offers" class="tab-content active">
+                <div class="empty-state">
+                    <img src="offer-icon.png" alt="Offers">
+                    <p>You have no active offers!<br>Your active offers can be found here. Come back later.</p>
+                </div>
+            </div>
+            <div id="rewards" class="tab-content">
+                <!-- Content for rewards can go here -->
+            </div>
+        </div>
+    </div>
+    <script >
+        function showTab(tabName) {
+    var i, tabcontent, tabbuttons;
+    
+    // Hide all tab contents
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+        tabcontent[i].classList.remove("active");
+    }
+
+    // Remove active class from all tab buttons
+    tabbuttons = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].classList.remove("active");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    document.getElementById(tabName).classList.add("active");
+    event.currentTarget.classList.add("active");
+}
+
+// Initialize the default tab
+document.addEventListener("DOMContentLoaded", function() {
+    showTab('offers');
+});
+
+    </script>
+</body>
+</html>

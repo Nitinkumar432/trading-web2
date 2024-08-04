@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .referral-code {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .share-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .share-button:hover {
+            background-color: #0056b3;
+        }
+        .terms-conditions {
+            font-size: 12px;
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.getElementById('button').addEventListener('click', function() {
+            document.getElementById('message').innerText = 'Link Copied !! ';
+        });
+    </script>
+    <div class="container">
+        <img src="https://d2lp0bvuz6qjmb.cloudfront.net/banner/CG6%20(300-0)%20Voucher.jpg" alt="Banner">
+        <div class="referral-code">
+            <p>Use the below Referral Code to refer your friends to Angel One and get rewarded:</p>
+            <p><strong>Referral Code:</strong> NX049756W7</p>
+            <p><strong>Referral Link:</strong> <a href="https://your-referral-link.com" class="share-button" id="button">Copy</a></p>
+        </div>
+        <div class="terms-conditions">
+            <p>Terms and conditions apply. Offer valid for a limited time only.</p>
+        </div>
+    </div>
+</body>
+</html>

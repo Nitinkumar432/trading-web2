@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Dashboard</title>
+<link rel="stylesheet" href="order.css">
+<style>
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <ul>
+            <li onclick="openModal('TCS', '3840.35')">
+                <span class="stock-name">TCS</span>
+                <span class="stock-price">₹3,840.35</span>
+                <span class="stock-change red">-1.55%</span>
+            </li>
+            <li onclick="openModal('ZOMATO', '194.00')">
+                <span class="stock-name">ZOMATO</span>
+                <span class="stock-price">₹194.00</span>
+                <span class="stock-change red">-0.61%</span>
+            </li>
+            <li onclick="openModal('MOTHERSON', '129.25')">
+                <span class="stock-name">MOTHERSON</span>
+                <span class="stock-price">₹129.25</span>
+                <span class="stock-change green">+1.57%</span>
+            </li>
+            <li onclick="openModal('TATVA', '1099.60')">
+                <span class="stock-name">TATVA</span>
+                <span class="stock-price">₹1,099.60</span>
+                <span class="stock-change green">+0.58%</span>
+            </li>
+            <li onclick="openModal('NOL', '161.55')">
+                <span class="stock-name">NOL</span>
+                <span class="stock-price">₹161.55</span>
+                <span class="stock-change red">-1.43%</span>
+            </li>
+            <li onclick="openModal('VESUVIUS', '5175.00')">
+                <span class="stock-name">VESUVIUS</span>
+                <span class="stock-price">₹5,175.00</span>
+                <span class="stock-change red">-0.21%</span>
+            </li>
+            <li onclick="openModal('SEVENHILL', '0.70')">
+                <span class="stock-name">SEVENHILL</span>
+                <span class="stock-price">₹0.70</span>
+                <span class="stock-change green">+1.45%</span>
+            </li>
+            <li onclick="openModal('ADANIPORTS', '1340.15')">
+                <span class="stock-name">ADANIPORTS</span>
+                <span class="stock-price">₹1,340.15</span>
+                <span class="stock-change red">-0.36%</span>
+            </li>
+            <li onclick="openModal('ASIANPAINT', '2818.80')">
+                <span class="stock-name">ASIANPAINT</span>
+                <span class="stock-price">₹2,818.80</span>
+                <span class="stock-change green">+0.17%</span>
+            </li>
+            <li onclick="openModal('AXISBANK', '1142.50')">
+                <span class="stock-name">AXISBANK</span>
+                <span class="stock-price">₹1,142.50</span>
+                <span class="stock-change green">+0.28%</span>
+            </li>
+            <li onclick="openModal('BAJAJ-AUTO', '8797.00')">
+                <span class="stock-name">BAJAJ-AUTO</span>
+                <span class="stock-price">₹8,797.00</span>
+                <span class="stock-change red">-0.84%</span>
+            </li>
+            <li onclick="openModal('BAJAJFINSV', '1582.50')">
+                <span class="stock-name">BAJAJFINSV</span>
+                <span class="stock-price">₹1,582.50</span>
+                <span class="stock-change red">-0.85%</span>
+            </li>
+            <li onclick="openModal('BAJAJFINANCE', '6745.05')">
+                <span class="stock-name">BAJAJFINANCE</span>
+                <span class="stock-price">₹6,745.05</span>
+                <span class="stock-change green">+0.67%</span>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('open-orders')">Open Orders</div>
+            <div class="tab" onclick="showTab('positions')">Positions</div>
+            <div class="tab" onclick="showTab('order-history')">Order History</div>
+            <div class="tab" onclick="showTab('stock-sip')">Stock SIP</div>
+            <div class="tab" onclick="showTab('gtt')">GTT</div>
+            <div class="tab" onclick="showTab('basket-order')">Basket Order</div>
+            <div class="tab" onclick="showTab('alerts')">Alerts</div>
+        </div>
+        <div class="order-summary">
+            <div>Total BUY: ₹0.00<br>0 Transactions</div>
+            <div>Total SELL: ₹0.00<br>0 Transactions</div>
+            <div>Today's Charges: ₹0.00<br>0 Transactions</div>
+        </div>
+        <div class="orders">
+            <div id="open-orders" class="order-content">
+                <img src="https://cdn.angelone.in/sparkweb/images/no-history.svg" alt="No orders">
+                <p>No orders. Place an order from Angel Recommendation</p>
+            </div>
+            <div id="positions" class="order-content">
+                <img src="https://cdn.angelone.in/sparkweb/images/no-history.svg" alt="No orders">
+                <p>Not at any Position</p>
+                <button class="sip">Create Stock SIP</button>
+            </div>
+            <div id="order-history" class="order-content order-history-content">
+                <h2>Order History</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Stock Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="order-history-table-body"></tbody>
+                </table>
+            </div>
+            <!-- Add more content sections for other tabs here -->
+        </div>
+    </div>
+</div>
+
+<div class="overlay" onclick="closeModal()"></div>
+<div class="modal" id="modal">
+    <h2>Place Order</h2>
+    <p>Stock: <span id="modal-stock-name"></span></p>
+    <p>Price: ₹<span id="modal-stock-price"></span></p>
+    <input type="number" id="quantity" placeholder="Enter quantity" min="1">
+    <button onclick="placeOrder()">Buy</button>
+</div>
+
+<script>
+    function showTab(tab) {
+        document.querySelectorAll('.tab').forEach(function(element) {
+            element.classList.remove('active');
+        });
+        document.querySelectorAll('.order-content').forEach(function(element) {
+            element.style.display = 'none';
+        });
+        document.querySelector('.tab[onclick="showTab(\'' + tab + '\')"]').classList.add('active');
+        document.getElementById(tab).style.display = 'block';
+    }
+
+    document.querySelectorAll('.tab')[0].click(); // To show the first tab content by default
+
+    function openModal(stockName, stockPrice) {
+        document.getElementById('modal-stock-name').innerText = stockName;
+        document.getElementById('modal-stock-price').innerText = stockPrice;
+        document.querySelector('.overlay').style.display = 'block';
+        document.getElementById('modal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.querySelector('.overlay').style.display = 'none';
+        document.getElementById('modal').style.display = 'none';
+    }
+
+    function placeOrder() {
+        const stockName = document.getElementById('modal-stock-name').innerText;
+        const stockPrice = document.getElementById('modal-stock-price').innerText;
+        const quantity = document.getElementById('quantity').value;
+        
+        if (quantity) {
+            alert('Order placed for ' + quantity + ' shares.');
+            addOrderToHistory(stockName, quantity, stockPrice);
+            closeModal();
+        } else {
+            alert('Please enter a valid quantity.');
+        }
+    }
+
+    function addOrderToHistory(stockName, quantity, stockPrice) {
+        const orderHistoryTableBody = document.getElementById('order-history-table-body');
+        const newRow = document.createElement('tr');
+
+        newRow.innerHTML = `
+            <td>${stockName}</td>
+            <td>${quantity}</td>
+            <td>₹${stockPrice}</td>
+        `;
+
+        orderHistoryTableBody.appendChild(newRow);
+    }
+</script>
+
+</body>
+</html>

@@ -222,7 +222,7 @@ header {
   align-items: center;
   height: 90px;
   /* padding: 0 30px; */
-  background-color: #5a5c53;
+  background-color: rgb(70, 67, 67);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000; /* Ensure the header is above other elements */
 }

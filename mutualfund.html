@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investments Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* General styles */
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 24px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #007bff;
+}
+
+header .search input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+header .search input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+header .icons {
+    display: flex;
+    align-items: center;
+}
+
+header .icons .icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 20px;
+    background-size: cover;
+    position: relative;
+    cursor: pointer;
+}
+
+header .icons .cart .badge {
+    background-color: #dc3545;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+main {
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Highlight section */
+.highlight {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.highlight-items {
+    display: flex;
+}
+
+.highlight-item {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 20%;
+    padding: 10px;
+    margin-right: 10px;
+    text-align: center;
+    cursor: pointer;
+    flex: 0 0 80px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.highlight-item:hover {
+    transform: scale(1.1);
+    background-color: #007bff;
+    color: #fff;
+}
+
+.highlight-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/* Start SIP section */
+.start-sip, .most-bought-sips, .sip-options {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.start-sip:hover, .most-bought-sips:hover, .sip-options:hover {
+    transform: translateY(-5px);
+}
+
+.start-sip h2, .most-bought-sips h2 {
+    margin: 0 0 10px 0;
+}
+
+/* SIP Carousel */
+.most-bought-sips .sips-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.sip-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 10px;
+    flex: 0 0 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sip-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* SIP Options */
+.sip-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sip-options .option {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    margin-right: 10px;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.sip-options .option:hover {
+    transform: translateY(-5px);
+    background-color: #007bff;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sip-options .option:last-child {
+    margin-right: 0;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+</style>
+<body>
+    <header>
+        <div class="logo">InvestEasy</div>
+        <nav>
+            <ul>
+                <li><a href="#discover">Discover</a></li>
+                <li><a href="#investments">Investments</a></li>
+                <li><a href="#sips">SIPs</a></li>
+                <li><a href="#orders">Orders</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Search by fund name, type or AMC">
+        </div>
+        <div class="icons">
+            <div class="icon bell" style="background-image: url('https://d3usff6y6s0r8b.cloudfront.net/v1/nippon_angel.svg');"></div>
+            <div class="icon cart" style="background-image: url('https://www.angelone.in/mutual-funds/nfo');">
+                <div class="badge">0</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="discover" class="highlight">
+            <div class="highlight-items">
+                <div class="highlight-item">
+                    <img src="https://d3usff6y6s0r8b.cloudfront.net/home_icon/sip_with_%E2%82%B9100_0.svg" alt="Company 1">
+                    <p>Flexi SIP</p>
+                </div>
+                <div class="highlight-item">
+                    <img src="https://d3usff6y6s0r8b.cloudfront.net/home_icon/sip_with_%E2%82%B9500_0.svg" alt="Company 2">
+                    <p>Best of ICICI</p>
+                </div>
+                <div class="highlight-item">
+                    <img src="https://d3usff6y6s0r8b.cloudfront.net/home_icon/high_returns_0.svg" alt="Company 3">
+                    <p>Index Funds</p>
+                </div>
+                <div class="highlight-item">
+                    <img src="https://d3usff6y6s0r8b.cloudfront.net/v1/aditya_birla_angel.svg" alt="Company 4">
+                    <p>Quant Small Cap</p>
+                </div>
+                <div class="highlight-item">
+                    <img src="https://d3usff6y6s0r8b.cloudfront.net/v1/hdfc_angel.svg" alt="Company 5">
+                    <p>SBI Blue Chip</p>
+                </div>
+                <div class="highlight-item">
+                    <img src="https://d3usff6y6s0r8b.cloudfront.net/v1/boi_angel.svg" alt="Company 6">
+                    <p>Motilal 150</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="start-sip">
+            <h2>Start SIP</h2>
+            <p>Pay on any date of your choice</p>
+        </section>
+
+        <section class="most-bought-sips">
+            <h2>Most Bought SIPs</h2>
+            <div class="sips-carousel">
+                <div class="sip-card">
+                    <img src="https://d3usff6y6s0r8b.cloudfront.net/v1/sbi_angel.svg" alt="Nippon">
+                    <h3>Nippon India Large Cap Fund</h3>
+                    <p>Min. SIP Amount: ₹100</p>
+                    <p>3Y Returns: 25.30% p.a</p>
+                    <p><small>481,601 people invested in this fund</small></p>
+                </div>
+                <div class="sip-card">
+                    <img src="https://d3usff6y6s0r8b.cloudfront.net/v1/quant_angel.svg" alt="Quant">
+                    <h3>Quant Flexi Cap Fund</h3>
+                    <p>Min. SIP Amount: ₹1,000</p>
+                    <p>3Y Returns: 28.13% p.a</p>
+                    <p><small>466,730 people invested in this fund</small></p>
+                </div>
+                <div class="sip-card">
+                    <img src="https://d3usff6y6s0r8b.cloudfront.net/v1/hdfc_angel.svg" alt="HDFC">
+                    <h3>HDFC Mid-Cap Opportunities</h3>
+                    <p>Min. SIP Amount: ₹100</p>
+                    <p>3Y Returns: 20.45% p.a</p>
+                    <p><small>414,324 people invested in this fund</small></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="sip-options">
+            <div class="option">
+                <p>SIP With ₹100</p>
+            </div>
+            <div class="option">
+                <p>SIP With ₹500</p>
+            </div>
+            <div class="option">
+                <p>High Returns</p>
+            </div>
+            <div class="option">
+                <p>Index Funds</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

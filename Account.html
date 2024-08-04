@@ -18,8 +18,8 @@
             <div class="headRight">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5AbdvofY8OOnhapQdCuekK6B5t4NdrmlRkA&usqp=CAU" alt="">
                 <span>Settings</span>
-                <img src="https://png.pngtree.com/png-vector/20190425/ourmid/pngtree-vector-logout-icon-png-image_987311.jpg" alt="">
-                <span>Logout</span>
+                <img src="https://png.pngtree.com/png-vector/20190425/ourmid/pngtree-vector-logout-icon-png-image_987311.jpg" alt="logout" id="logoutBtn">
+                <span id="logoutBtn">Logout</span>
             </div>
         </div>
         <div class="transaction">
@@ -33,12 +33,12 @@
             <div class="balance">
                 <div class="totalBalance">
                     <span>Trading Balance</span>
-                    <span><h2>$74766.65</h2></span>
+                    <span><h2 id="tradingBalance">$74766.65</h2></span>
                 </div>
                 <div class="options">
                     <div class="addFunds">
-                        <span>ADD FUNDS</span>
-                        <span>WITHDRAW</span>
+                        <span onclick="openAddFundsPopup()" style="cursor: pointer; text-decoration: none; color: rgb(255, 255, 255);">ADD FUNDS</span>
+                        <span onclick="openWithdrawPopup()" style="cursor: pointer; text-decoration: none; color: rgb(255, 255, 255);">Withdraw</span>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
             <div class="dashTable">
                 <div class="traders">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROUWCzD3Jum8C5fBFDOWBcur2v6SUgwXiK_A&usqp=CAUhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROUWCzD3Jum8C5fBFDOWBcur2v6SUgwXiK_A&usqp=CAU" alt="">
-                    <span><h3>Traders & Charges</h3></span>
+                    <a  href="./tradercharge.html" style="text-decoration: none; color:white" ><span><h3 style="color:white">Traders & Charges</h3></span></a>
                     <span>All your charges in one place</span> 
                 </div>
                 <div class="traders">
@@ -111,5 +111,53 @@
             </div>
         </div>
     </div>
+    <div id="addFundsPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeAddFundsPopup()">&times;</span>
+            <h2>Add Funds</h2>
+            <label for="amount">Enter Amount:</label>
+            <input type="number" id="amount" name="amount" min="1" required>
+            <button onclick="generateQRCode()">Generate QR Code</button>
+            <div id="qrCodeContainer" style="display: none;">
+                <img id="qrCode" src="qr.jpg" alt="QR Code">
+                <button onclick="simulatePayment()">Pay</button>
+            </div>
+            <div id="confirmation" style="display: none;">
+                <img src="https://img.icons8.com/color/96/000000/checked--v1.png" alt="Success">
+                <h3>Payment Successful</h3>
+            </div>
+        </div>
+    </div>
+    <div id="withdrawPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeWithdrawPopup()">&times;</span>
+            <h2>Withdraw Funds</h2>
+            <label for="withdrawAmount">Enter Amount:</label>
+            <input type="number" id="withdrawAmount" name="withdrawAmount" min="1" required>
+            <button onclick="checkBalance()">Proceed</button>
+            <div id="withdrawForm" style="display: none;">
+                <label for="accountNumber">Account Number:</label>
+                <input type="text" id="accountNumber" name="accountNumber" required>
+                <label for="ifscCode">IFSC Code:</label>
+                <input type="text" id="ifscCode" name="ifscCode" required>
+                <label for="bankBranch">Bank Branch Address:</label>
+                <input type="text" id="bankBranch" name="bankBranch" required>
+                <button onclick="processWithdrawal()">Withdraw</button>
+            </div>
+            <div id="withdrawConfirmation" style="display: none;">
+                <img src="https://img.icons8.com/color/96/000000/checked--v1.png" alt="Success">
+                <h3>Withdrawal Successful</h3>
+            </div>
+        </div>
+    </div>
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <span class="closet">&times;</span>
+            <p>Are you sure you want to logout?</p>
+            <button id="confirmLogout">Logout</button>
+        </div>
+    </div>
+
+    <script src="Account.js"></script>
 </body>
 </html>
